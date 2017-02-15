@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A Webvantage Bookmarklet</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style type="text/css">
+        .container {
+            text-align: center;
+        }
+        .container h1 {
+            margin-bottom: 40px;
+        }
+        .container p {
+            line-height: 1em;
+        }
+        code.body {
+            color: #000;
+        }
+        .small {
+            font-size: .75em;
+            margin-top: 30px;
+        }
+        .big-link {
+            margin-top: 10%;
+        }
+        .big-link a {
+            font-size: 4em;
+            transition: color .2s;
+        }
+        .big-link a:hover, .big-link a:active, .big-link a:focus {
+            text-decoration: none;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Keep My Webvantage Timer Alive Dammit</h1>
+        <p>To prevent that notorious session timeout, just drag the link below into your bookmarks bar.</p>
+        <p>Then, after you log in to Webvantage, click the <code class="body">KeepTimerAlive</code> bookmark.</p>
+        <p>Voila! You'll no longer be logged out every two hours.</p>
+        <p class="small"><em>Last tested on <code>Webvantage Aqua v6.70.00.18</code></em></p>
+        <div class="big-link">
+            <a href='javascript:(function()%7Bvar%20x%20%3D%20new%20Date()%3B%20console.info(%22session%20begin%3A%20%22%2C%20x.toLocaleString())%3B%20setInterval(function()%7B%20CallUiAction(24%2C%20%22%22%2C%20%22%22)%3B%20console.info(%22session%20renewed%3A%20%22%2C%20x.toLocaleString())%20%7D%2C%201000%20*%2060%20*%2060)%7D)()'>KeepTimerAlive</a>
+        </div>
+    </div>
+    <footer>
+        <p class="small">Version 1.0.0</p>
+    </footer>
+
+</body>
+</html>
